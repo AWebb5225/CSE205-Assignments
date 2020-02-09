@@ -10,7 +10,7 @@ public abstract class BankAccount {
     Scanner scan = new Scanner(System.in);
 
     public boolean credit(int amount) {
-
+        return true;
     }
 
     public abstract boolean debit(int amount);
@@ -23,7 +23,7 @@ public abstract class BankAccount {
         return accountNumber;
     }
 
-    public void setAccountNumber() {
+    public void setAccountNumber(String accountNumber) {
         accountNumber = scan.nextLine();
     }
 
@@ -31,7 +31,7 @@ public abstract class BankAccount {
         return interestRate;
     }
 
-    public void setInterestRate() {
+    public void setInterestRate(double interestRate) {
         interestRate = scan.nextDouble();
     }
 

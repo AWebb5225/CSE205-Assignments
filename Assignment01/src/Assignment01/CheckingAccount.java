@@ -15,6 +15,10 @@ public class CheckingAccount extends BankAccount {
         overdraftFee = scan.nextInt();
     }
 
+    public int getOverdraftFee() {
+        return overdraftFee;
+    }
+
     public void applyInterest() {
         double setInterest = balance * getInterestRate();
 

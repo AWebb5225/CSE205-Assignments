@@ -13,7 +13,7 @@ public class CreditcardAccount extends BankAccount{
         return trueFalse;
     }
 
-    public void setCreditLimit() {
+    public void setCreditLimit(int creditLimit) {
         creditLimit = scan.nextInt();
     }
 
