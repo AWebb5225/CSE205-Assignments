@@ -4,7 +4,7 @@ public class SavingsAccount extends BankAccount {
 
 //checks if the savings account has enough funds
     public boolean debit(int amount) {
-        boolean trueFalse = true;
+        boolean trueFalse = true; //used to return true or false
 
         if (balance < 0)
             trueFalse = false;

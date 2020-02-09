@@ -24,6 +24,7 @@ public class CheckingAccount extends BankAccount {
 
         if (balance > 0)
             balance += setInterest;
+
     }
 
     public String getAccountInfo() {
