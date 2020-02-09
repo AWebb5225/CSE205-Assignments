@@ -1,7 +1,6 @@
 package Assignment01;
 
 public class SavingsAccount extends BankAccount {
-int balance = getBalance();
 
 //checks if the savings account has enough funds
     public boolean debit(int amount) {
@@ -21,9 +20,9 @@ int balance = getBalance();
 
     //returns all of the information for the savings account
     public String getAccountInfo() {
-        return System.out.print("Account type\t: Checking\n" +
+        return "Account type\t: Savings\n" +
                                 "Account #\t: " + getAccountNumber() + "\n" +
                                 "Balance\t: " + getBalance() + "\n" +
-                                "Interest rate\t: " + getInterestRate() + "\n");
+                                "Interest rate\t: " + getInterestRate() + "\n";
     }
 }

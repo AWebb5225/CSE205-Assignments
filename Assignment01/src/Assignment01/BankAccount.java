@@ -1,11 +1,17 @@
 package Assignment01;
 
-public abstract class BankAccount {
-    private String accountNumber;
-    private double interestRate;
-    private int balance;
+import java.util.Scanner;
 
-    public boolean credit(int amount) {}
+public abstract class BankAccount {
+    protected String accountNumber = "0000-0000-0000-0000";
+    protected double interestRate;
+    protected int balance;
+
+    Scanner scan = new Scanner(System.in);
+
+    public boolean credit(int amount) {
+
+    }
 
     public abstract boolean debit(int amount);
 
@@ -17,17 +23,16 @@ public abstract class BankAccount {
         return accountNumber;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        accountNumber = "0000-0000-0000-0000";
+    public void setAccountNumber() {
+        accountNumber = scan.nextLine();
     }
 
     public double getInterestRate() {
         return interestRate;
     }
 
-    public void setInterestRate() { //interest is calculated
-        double interest = balance * getInterestRate();
-        double setInterest = balance + interest;
+    public void setInterestRate() {
+        interestRate = scan.nextDouble();
     }
 
     public abstract void applyInterest();

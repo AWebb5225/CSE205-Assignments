@@ -2,7 +2,7 @@ package Assignment01;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class Assignment01 {
     private static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -135,7 +135,7 @@ public class Main {
     }
 
     private static void setBasicAccountData(BankAccount newAccount) {
-        newAccount.setAccountNumber(getAccountNumber());
+        newAccount.setAccountNumber();
         newAccount.setInterestRate(getInterestRate());
     }
 

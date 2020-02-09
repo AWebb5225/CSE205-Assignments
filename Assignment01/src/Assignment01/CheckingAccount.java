@@ -1,27 +1,31 @@
 package Assignment01;
 
+
 public class CheckingAccount extends BankAccount {
     private int overdraftFee;
-    int balance = getBalance();
-
-
 
     public boolean debit(int amount) {
-        return true;
+        if (amount < 0)
+            balance = amount - overdraftFee;
+
+            return true;
     }
 
-    //checks if the balance is less than zero and if it is then it adds an overdraft fee
     public void setOverdraftFee(int overdraftFee) {
-        if (balance < 0)
-            balance += overdraftFee;
+        overdraftFee = scan.nextInt();
     }
 
     public void applyInterest() {
-        double interest = getInterestRate();
-        if (balance > 0)
+        double setInterest = balance * getInterestRate();
 
+        if (balance > 0)
+            balance += setInterest;
     }
 
-    public String getAccountInfo() {}
-
+    public String getAccountInfo() {
+        return "Account type\t: Checking\n" +
+                "Account #\t: " + getAccountNumber() + "\n" +
+                "Balance\t: " + getBalance() + "\n" +
+                "Interest rate\t: " + getInterestRate() + "\n";
+    }
 }
