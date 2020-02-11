@@ -24,9 +24,11 @@ public class SavingsAccount extends BankAccount {
 
     //returns all of the information for the savings account
     public String getAccountInfo() {
-        return "Account type : Savings\n" +
+         String formattedInterestRate = String.format("%.2f", interestRate*100);
+         String formattedBalance = String.format("$%.2f", (double) balance/100);
+        return "Account type  : Savings\n" +
                 "Account #     : " + getAccountNumber() + "\n" +
-                "Balance       : " + fmt1.format(getBalance()) + "\n" +
-                "Interest rate : " + fmt2.format(getInterestRate()) + "\n";
+                "Balance       : " + formattedBalance  + "\n" +
+                "Interest rate : " + formattedInterestRate + "%\n";
     }
 }
