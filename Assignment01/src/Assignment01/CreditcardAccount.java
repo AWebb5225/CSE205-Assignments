@@ -6,10 +6,12 @@ public class CreditcardAccount extends BankAccount {
 
     @Override
     public boolean debit(int amount) {
-        boolean trueFalse = true;
-
-        if (this.balance > amount)
-            trueFalse = false;
+        boolean trueFalse = false; //used to return true or false
+        this.balance -= creditLimit;
+        creditLimit -= amount;
+        if (creditLimit > 0) {
+            trueFalse = true;
+        }
 
         return trueFalse;
     }
@@ -24,17 +26,19 @@ public class CreditcardAccount extends BankAccount {
 
     public void applyInterest() {
         double interest = getInterestRate();
-        double balance = getBalance();
-        double setInterest = balance * interest;
 
         if (this.balance < 0)
-            this.balance += setInterest;
+            this.balance = ((int) (interest * this.balance) + this.balance);
     }
 
     public String getAccountInfo() {
-        return "Account type   : Checking\n" +
+        String formattedBalance = String.format("$%.2f", (double) getBalance()/100);
+        String formattedInterestRate = String.format("%.2f", getInterestRate()*100);
+        String formattedCreditLimit = String.format("$%.2f", (double) getCreditLimit()/100);
+        return "Account type  : Creditcard\n" +
                 "Account #     : " + getAccountNumber() + "\n" +
-                "Balance       : " + getBalance() + "\n" +
-                "Interest rate : " + getInterestRate() + "\n";
+                "Balance       : " + formattedBalance + "\n" +
+                "Interest rate : " + formattedInterestRate + "%" + "\n" +
+                "Credit Limit  : " + formattedCreditLimit + "\n";
     }
 }

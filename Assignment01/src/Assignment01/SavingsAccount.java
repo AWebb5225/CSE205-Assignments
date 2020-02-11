@@ -3,6 +3,7 @@ package Assignment01;
 public class SavingsAccount extends BankAccount {
 
 //checks if the savings account has enough funds
+    @Override
      public boolean debit(int amount) {
         boolean trueFalse = false; //used to return true or false
 
@@ -26,6 +27,7 @@ public class SavingsAccount extends BankAccount {
     public String getAccountInfo() {
          String formattedInterestRate = String.format("%.2f", interestRate*100);
          String formattedBalance = String.format("$%.2f", (double) balance/100);
+
         return "Account type  : Savings\n" +
                 "Account #     : " + getAccountNumber() + "\n" +
                 "Balance       : " + formattedBalance  + "\n" +

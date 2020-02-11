@@ -3,8 +3,6 @@ package Assignment01;
 import java.text.DecimalFormat;
 
 public abstract class BankAccount {
-    DecimalFormat fmt1 = new DecimalFormat("#.##");
-    DecimalFormat fmt2 = new DecimalFormat("#.##%");
 
     protected String accountNumber = "0000-0000-0000-0000"; //sets default account number
     protected double interestRate;
