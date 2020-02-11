@@ -1,36 +1,37 @@
 package Assignment01;
 
 
+
 public class CheckingAccount extends BankAccount {
     private int overdraftFee;
 
+    @Override
     public boolean debit(int amount) {
         if (amount < 0)
-            balance = amount - overdraftFee;
+            this.balance = amount - overdraftFee;
 
             return true;
     }
 
     public void setOverdraftFee(int overdraftFee) {
-        overdraftFee = scan.nextInt();
+        this.overdraftFee = overdraftFee;
     }
 
     public int getOverdraftFee() {
-        return overdraftFee;
+        return this.overdraftFee;
     }
 
     public void applyInterest() {
-        double setInterest = balance * getInterestRate();
+        double setInterest = this.balance * getInterestRate();
 
-        if (balance > 0)
+        if (this.balance > 0)
             balance += setInterest;
-
     }
 
     public String getAccountInfo() {
-        return "Account type\t: Checking\n" +
-                "Account #\t: " + getAccountNumber() + "\n" +
-                "Balance\t: " + getBalance() + "\n" +
-                "Interest rate\t: " + getInterestRate() + "\n";
+        return "Account type   : Checking\n" +
+                "Account #     : " + getAccountNumber() + "\n" +
+                "Balance       : " + getBalance() + "\n" +
+                "Interest rate : " + getInterestRate() + "\n";
     }
 }

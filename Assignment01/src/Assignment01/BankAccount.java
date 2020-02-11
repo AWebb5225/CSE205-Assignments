@@ -1,38 +1,40 @@
 package Assignment01;
 
-import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public abstract class BankAccount {
-    protected String accountNumber = "0000-0000-0000-0000";
+    DecimalFormat fmt1 = new DecimalFormat("#.##");
+    DecimalFormat fmt2 = new DecimalFormat("#.##%");
+
+    protected String accountNumber = "0000-0000-0000-0000"; //sets default account number
     protected double interestRate;
     protected int balance;
 
-    Scanner scan = new Scanner(System.in);
-
     public boolean credit(int amount) {
+        balance += amount;
         return true;
     }
 
     public abstract boolean debit(int amount);
 
     public int getBalance() {
-        return balance;
+        return this.balance;
     }
 
     public String getAccountNumber() {
-        return accountNumber;
+        return this.accountNumber;
     }
 
     public void setAccountNumber(String accountNumber) {
-        accountNumber = scan.nextLine();
+        this.accountNumber = accountNumber;
     }
 
     public double getInterestRate() {
-        return interestRate;
+        return this.interestRate;
     }
 
     public void setInterestRate(double interestRate) {
-        interestRate = scan.nextDouble();
+        this.interestRate = interestRate;
     }
 
     public abstract void applyInterest();

@@ -1,24 +1,25 @@
 package Assignment01;
 
-public class CreditcardAccount extends BankAccount{
+
+public class CreditcardAccount extends BankAccount {
     private int creditLimit;
 
+    @Override
     public boolean debit(int amount) {
-        double balance = getBalance();
         boolean trueFalse = true;
 
-        if (balance > getCreditLimit())
+        if (this.balance > amount)
             trueFalse = false;
 
         return trueFalse;
     }
 
     public void setCreditLimit(int creditLimit) {
-        creditLimit = scan.nextInt();
+        this.creditLimit = creditLimit;
     }
 
     public int getCreditLimit() {
-        return creditLimit;
+        return this.creditLimit;
     }
 
     public void applyInterest() {
@@ -26,14 +27,14 @@ public class CreditcardAccount extends BankAccount{
         double balance = getBalance();
         double setInterest = balance * interest;
 
-        if (balance < 0)
-            balance += setInterest;
+        if (this.balance < 0)
+            this.balance += setInterest;
     }
 
     public String getAccountInfo() {
-        return "Account type\t: Creditcard\n" +
-                "Account #\t: " + getAccountNumber() + "\n" +
-                "Balance\t: " + getBalance() + "\n" +
-                "Interest rate\t: " + getInterestRate() + "\n";
+        return "Account type   : Checking\n" +
+                "Account #     : " + getAccountNumber() + "\n" +
+                "Balance       : " + getBalance() + "\n" +
+                "Interest rate : " + getInterestRate() + "\n";
     }
 }

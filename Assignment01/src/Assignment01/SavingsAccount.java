@@ -3,10 +3,14 @@ package Assignment01;
 public class SavingsAccount extends BankAccount {
 
 //checks if the savings account has enough funds
-    public boolean debit(int amount) {
-        boolean trueFalse = true; //used to return true or false
+     public boolean debit(int amount) {
+        boolean trueFalse = false; //used to return true or false
 
-        if (balance < 0)
+         if (this.balance > amount) {
+             this.balance -= amount;
+             trueFalse = true;
+        }
+        else if (this.balance < amount)
             trueFalse = false;
 
         return trueFalse;
@@ -14,15 +18,15 @@ public class SavingsAccount extends BankAccount {
 
     //applies the interest rate to the savings account
     public void applyInterest() {
-        double interest = getInterestRate();
-        balance *= interest;
+         double interest = getInterestRate();
+        this.balance = ((int) (interest * this.balance) + this.balance);
     }
 
     //returns all of the information for the savings account
     public String getAccountInfo() {
-        return "Account type\t: Savings\n" +
-                                "Account #\t: " + getAccountNumber() + "\n" +
-                                "Balance\t: " + getBalance() + "\n" +
-                                "Interest rate\t: " + getInterestRate() + "\n";
+        return "Account type : Savings\n" +
+                "Account #     : " + getAccountNumber() + "\n" +
+                "Balance       : " + fmt1.format(getBalance()) + "\n" +
+                "Interest rate : " + fmt2.format(getInterestRate()) + "\n";
     }
 }
