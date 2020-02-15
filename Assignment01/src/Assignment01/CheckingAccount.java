@@ -1,4 +1,4 @@
-package Assignment01;
+import Assignment01.BankAccount;//package Assignment01;
 
 public class CheckingAccount extends BankAccount {
     private int overdraftFee;

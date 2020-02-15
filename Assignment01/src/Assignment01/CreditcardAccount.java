@@ -1,6 +1,8 @@
 package Assignment01;
 
 
+import Assignment01.BankAccount;
+
 public class CreditcardAccount extends BankAccount {
     private int creditLimit;
 
