@@ -1,2 +1,26 @@
-public class MyListIterator {
+/*CSE 205: Class 11333 - Tues/Thurs 4:30-5:45
+  Assignment: 2
+  Description: This file accesses to any position in a linked list
+ */
+/**
+ A list iterator allows access of a position in a linked list.
+ This interface contains a subset of the methods of the
+ standard java.util.ListIterator interface. The methods for
+ backward traversal are not included.
+ */
+public interface MyListIterator
+{
+    /**
+     Moves the iterator past the next element.
+     @return the traversed element
+     */
+    Object next();
+
+    /**
+     Tests if there is an element after the iterator
+     position.
+     @return true if there is an element after the iterator
+     position
+     */
+    boolean hasNext();
 }
